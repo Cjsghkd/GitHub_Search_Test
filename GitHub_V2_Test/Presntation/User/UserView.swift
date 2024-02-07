@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct UserView: View {
     let user: Item
     
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: user.avatar_url))
+            //AsyncImage(url: URL(string: user.avatar_url))
+            WebImage(url: URL(string: user.avatar_url))
             Text("Name : " + user.login)
             Text("Id : " + "\(user.id)")
             Text("Bio : " + user.subscriptions_url.description)
